@@ -154,6 +154,39 @@
   .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
   .mark{display:inline-flex;align-items:center;justify-content:center;background:#0a0a0a;color:#fff;font-family:'Playfair Display',serif;font-size:17px;padding:12px 18px;border-radius:6px}
   .foot .meta{font-size:14px;color:var(--muted)}
+  .foot-social a{color:var(--peach);font-size:14px;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
+  .foot-social a:hover{border-color:var(--peach)}
+
+  /* ---- availability badge ---- */
+  .status{display:inline-flex;align-items:center;gap:9px;background:rgba(248,216,198,.1);border:.5px solid var(--line);color:var(--peach-soft);font-size:13.5px;padding:7px 15px;border-radius:999px;margin-bottom:22px}
+  .status .dot{width:8px;height:8px;border-radius:50%;background:#7bdca0;box-shadow:0 0 0 0 rgba(123,220,160,.6);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(123,220,160,.55)}70%{box-shadow:0 0 0 7px rgba(123,220,160,0)}100%{box-shadow:0 0 0 0 rgba(123,220,160,0)}}
+
+  /* ---- témoignages ---- */
+  .grid-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:8px}
+  .quote{background:var(--card);border:.5px solid var(--line);border-radius:14px;padding:30px 26px;display:flex;flex-direction:column;gap:16px}
+  .quote .mark-q{font-family:'Playfair Display',serif;font-size:46px;line-height:.6;color:var(--peach);height:22px}
+  .quote p{font-size:16px;color:var(--text);font-style:italic;line-height:1.6}
+  .quote .who{margin-top:auto;font-size:14px;color:var(--muted);font-style:normal;line-height:1.4}
+  .quote .who strong{color:var(--peach-soft);font-weight:700;display:block;font-size:15px}
+
+  /* ---- contact form ---- */
+  .contact-form{display:grid;gap:16px;text-align:left;margin:34px auto 0;max-width:540px}
+  .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .contact-form label{display:block;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .contact-form input,.contact-form textarea{width:100%;background:var(--navy);border:1px solid var(--line);border-radius:10px;color:var(--text);font-family:inherit;font-size:16px;padding:13px 15px;transition:border-color .2s}
+  .contact-form textarea{resize:vertical;min-height:130px}
+  .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--peach)}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted);opacity:.65}
+  .contact-form .btn{border:none;cursor:pointer;font-family:inherit;width:100%;padding:14px;font-size:15.5px}
+  ._honey{display:none}
+  @media(max-width:560px){.contact-form .row{grid-template-columns:1fr}}
+
+  /* ---- socials ---- */
+  .socials{display:flex;gap:14px;justify-content:center;margin-top:28px}
+  .socials a{width:42px;height:42px;border-radius:10px;border:.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--peach);transition:border-color .2s,transform .2s,background .2s}
+  .socials a:hover{border-color:var(--peach);transform:translateY(-2px);background:var(--card-hover)}
+  .socials svg{width:20px;height:20px}
 </style>
 </head>
 <body>
@@ -176,6 +209,7 @@
   <!-- HERO -->
   <section class="hero" style="border-top:none">
     <div class="wrap">
+      <span class="status reveal d1"><span class="dot"></span>Disponible pour de nouveaux projets</span>
       <p class="eyebrow reveal d1">Consultante freelance en communication</p>
       <h1 class="reveal d2">Donnons du sens et de la cohérence à votre communication.</h1>
       <p class="lead reveal d3">Stratégie, campagnes impactantes et contenus engageants — pour toucher votre audience avec justesse, authenticité et efficacité.</p>
@@ -288,17 +322,78 @@
     </div>
   </section>
 
+  <!-- TÉMOIGNAGES — Section prête à l'emploi mais MASQUÉE (attribut "hidden").
+       Pour l'activer : 1) remplace les textes [entre crochets] par de vraies citations,
+       2) supprime le mot « hidden » dans la balise <section ...> ci-dessous. -->
+  <section id="temoignages" hidden>
+    <div class="wrap">
+      <p class="sec-label">Témoignages</p>
+      <h2 style="margin-bottom:34px">Ce qu'ils en disent.</h2>
+      <div class="grid-quotes">
+        <div class="quote">
+          <span class="mark-q">“</span>
+          <p>[Colle ici une phrase d'un client satisfait : ce que tu lui as apporté, le résultat obtenu, ta façon de travailler…]</p>
+          <span class="who"><strong>Prénom Nom</strong>Poste · Entreprise</span>
+        </div>
+        <div class="quote">
+          <span class="mark-q">“</span>
+          <p>[Deuxième témoignage — idéalement avec un résultat concret ou un ressenti fort.]</p>
+          <span class="who"><strong>Prénom Nom</strong>Poste · Entreprise</span>
+        </div>
+        <div class="quote">
+          <span class="mark-q">“</span>
+          <p>[Troisième témoignage — court et percutant, c'est l'idéal.]</p>
+          <span class="who"><strong>Prénom Nom</strong>Poste · Entreprise</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap contact-box">
       <p class="sec-label" style="display:inline-block">Contact</p>
       <h2>Besoin d'un souffle nouveau&nbsp;?</h2>
       <p class="lead">Prêt·e à insuffler un nouvel élan à votre projet ? Parlons-en — un échange de 20 minutes, sans engagement.</p>
-      <a href="mailto:juliette.karbouche@hotmail.com" class="btn">Écrire à Juliette</a>
+
+      <form class="contact-form" action="https://formsubmit.co/juliette.karbouche@hotmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau message depuis JK.studio ✨">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://projkstudio-cmd.github.io/jk-studio/merci.html">
+        <input type="text" name="_honey" class="_honey" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <div>
+            <label for="cf-name">Nom</label>
+            <input id="cf-name" type="text" name="name" placeholder="Votre nom" required>
+          </div>
+          <div>
+            <label for="cf-email">E-mail</label>
+            <input id="cf-email" type="email" name="email" placeholder="vous@exemple.com" required>
+          </div>
+        </div>
+        <div>
+          <label for="cf-org">Entreprise / organisation <span style="text-transform:none;letter-spacing:0">(optionnel)</span></label>
+          <input id="cf-org" type="text" name="entreprise" placeholder="Le nom de votre structure">
+        </div>
+        <div>
+          <label for="cf-msg">Votre projet</label>
+          <textarea id="cf-msg" name="message" placeholder="Parlez-moi de votre projet, vos objectifs, vos échéances…" required></textarea>
+        </div>
+        <button type="submit" class="btn">Envoyer mon message</button>
+      </form>
+
+      <p style="font-size:14px;color:var(--muted);margin-top:16px">Réponse sous 24-48&nbsp;h · Premier échange de 20&nbsp;min offert, sans engagement.</p>
+
       <div class="contact-info">
         <a href="mailto:juliette.karbouche@hotmail.com">juliette.karbouche@hotmail.com</a>
         <a href="tel:+33651196073">06 51 19 60 73</a>
         <span class="loc">Paris &amp; Vendôme</span>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/juliette-karbouche/" target="_blank" rel="noopener" aria-label="LinkedIn de Juliette Karbouche">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.5H5.67V18h2.67V9.5zM7 5.88a1.55 1.55 0 1 0 0 3.1 1.55 1.55 0 0 0 0-3.1zM18.34 18v-4.67c0-2.5-1.34-3.66-3.12-3.66a2.69 2.69 0 0 0-2.44 1.34h-.04V9.5h-2.56V18h2.67v-4.2c0-1.11.21-2.18 1.58-2.18 1.35 0 1.37 1.26 1.37 2.25V18h2.56z"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -309,6 +404,7 @@
   <div class="wrap foot">
     <span class="mark">JK.studio</span>
     <span class="meta">Juliette Karbouche — Consultante freelance en communication</span>
+    <span class="foot-social"><a href="https://www.linkedin.com/in/juliette-karbouche/" target="_blank" rel="noopener">LinkedIn ↗</a></span>
   </div>
 </footer>
 
