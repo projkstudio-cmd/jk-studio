@@ -64,8 +64,8 @@
     border-bottom:.5px solid var(--line);
   }
   .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .logo{font-family:'Playfair Display',serif;color:var(--peach);font-size:22px;letter-spacing:.5px}
-  .logo span{font-size:14px}
+  .logo{display:flex;align-items:center}
+  .logo img{height:30px;width:auto;display:block}
   .nav-links{display:flex;gap:30px;align-items:center;font-size:14.5px;color:var(--muted)}
   .nav-links a{transition:color .2s}
   .nav-links a:hover{color:var(--peach)}
@@ -174,7 +174,7 @@
   /* ---- footer ---- */
   footer{background:var(--navy-2);border-top:.5px solid var(--line);padding:46px 0}
   .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
-  .mark{display:inline-flex;align-items:center;justify-content:center;background:#0a0a0a;color:#fff;font-family:'Playfair Display',serif;font-size:17px;padding:12px 18px;border-radius:6px}
+  .foot-logo{height:34px;width:auto;display:block}
   .foot .meta{font-size:14px;color:var(--muted)}
   .foot-social a{color:var(--peach);font-size:14px;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
   .foot-social a:hover{border-color:var(--peach)}
@@ -237,7 +237,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo">JK<span>.studio</span></a>
+    <a href="#top" class="logo" aria-label="JK.studio — Accueil"><img src="logo-wordmark-peach.png" alt="JK.studio"></a>
     <nav class="nav-links">
       <a href="#apropos">À propos</a>
       <a href="#services">Services</a>
@@ -485,7 +485,7 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="mark">JK.studio</span>
+    <img class="foot-logo" src="logo-wordmark-peach.png" alt="JK.studio">
     <span class="meta">Juliette Karbouche — Consultante freelance en communication</span>
     <span class="foot-social"><a href="https://www.linkedin.com/in/juliette-karbouche/" target="_blank" rel="noopener">LinkedIn ↗</a></span>
   </div>
