@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://projkstudio-cmd.github.io/jk-studio/sitemap.xml

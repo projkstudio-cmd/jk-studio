@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jk-studio",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/juliettekarbouche/Desktop/Claude/jk-studio/.claude/serve.js"],
+      "port": 4173
+    }
+  ]
+}
